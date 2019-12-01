@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<h4>new token : {{new}}</h4>
+<h4>refresh : {{refresh}}</h4>
+<h4>access : {{access}}</h4>
+<h4>data : {{data}}</h4>
+<body>
+<form action="http://127.0.0.1:8000/form/" method="post">
+    {%csrf_token%}
+    <h3><input type="text" name="username" ></h3>
+    <h3><input name="password" type="text"></h3>
+    <input type="submit">
+</form>
+<form action="http://127.0.0.1:8000/form/" method="post">
+    {%csrf_token%}
+    <h3>refresh : <input type="text" name="refresh" value="{{refresh}}"></h3>
+    <h3>access: <input type="text" name="access" value="{{access}}"></h3>
+    <input type="submit">
+</form>
+</body>
+</html>
